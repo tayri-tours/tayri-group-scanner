@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
 
 // בעתיד נוסיף כאן קוד שיקבל הודעות מהקבוצות
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
