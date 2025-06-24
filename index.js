@@ -95,7 +95,6 @@ client.on('message', async msg => {
 
         if (messageTime.isBefore(targetTime)) {
             const reply = `🧠 קיבלתי! אני בודק נסיעה מאשקלון לאילת לטווח: ${targetTime.format('DD/MM HH:mm')}`;
-            await client.sendMessage(msg.from, reply);
             await client.sendMessage(ADMIN_NUMBER,
                 `🚌 נמצאה בקשה לנסיעה מאשקלון לאילת לטווח: ${targetTime.format('DD/MM HH:mm')}`);
         } else {
