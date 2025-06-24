@@ -1,21 +1,11 @@
-
----
-
-## ⚙️ `render.yaml` – הגדרת פרויקט אוטומטית  
-שמור בקובץ בשם `render.yaml` בשורש הפרויקט:
-
-```yaml
 services:
   - type: web
-    name: tayri-group-scanner
+    name: tayri-group-monitor
     env: node
-    plan: free
     buildCommand: npm install
     startCommand: node index.js
-    envVars:
-      - key: PORT
-        value: 10000
-      - key: SESSION_SECRET
-        value: your_secret
-      - key: WHATSAPP_API_KEY
-        value: your_api_key_here
+    plan: free
+    autoDeploy: false
+    envVars: []
+    ports:
+      - port: 10000
