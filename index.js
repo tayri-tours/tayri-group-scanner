@@ -120,16 +120,12 @@ client.on('message', async msg => {
         }
         return;
     }
-
- for (const keyword of keywords) {
+for (const keyword of keywords) {
   if (content.includes(keyword)) {
-    console.log(`🔍 מילה פתוחה: ${keyword}`);
+    console.log(`🎯 מילה מזוהה: ${keyword}`);
+    message.reply(`🔍 מילות מפתח שזוהו בקבוצה: ${keywords.join(', ')}`);
     break;
   }
 }
-
-message.reply(`🔍 מילות מפתח פתוחות בקבוצה: ${keywords.join(', ')}`);
-    }
 });
-
 client.initialize();
