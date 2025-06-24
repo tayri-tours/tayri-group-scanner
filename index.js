@@ -98,7 +98,6 @@ client.on('message', async msg => {
             await client.sendMessage(ADMIN_NUMBER,
                 `🚌 נמצאה בקשה לנסיעה מאשקלון לאילת לטווח: ${targetTime.format('DD/MM HH:mm')}`);
         } else {
-            await client.sendMessage(msg.from, '⌛ הבקשה לא רלוונטית – כבר עבר זמנה.');
         }
         return;
     }
