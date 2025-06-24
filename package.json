@@ -12,7 +12,6 @@
     "yargs-parser": "^21.1.1",
     "zip-stream": "^4.1.0",
     "archiver": "^6.0.0",
-    "ababell": "^1.0.0",
     "fs": "0.0.1-security"
   }
 }
