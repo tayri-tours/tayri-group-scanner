@@ -78,6 +78,25 @@ function parseDateFromText(text) {
 }
 
 client.on('message', async msg => {
+        // תגובה לפקודות מהאדמין בלבד
+    if (msg.from === ADMIN_NUMBER) {
+        const body = msg.body.toLowerCase();
+
+        if (body.startsWith('חפש לי')) {
+            scanning = true;
+
+            await client.sendMessage(ADMIN_NUMBER, '🔍 מתחיל חיפוש לפי הבקשה שלך...');
+            await client.sendMessage(ADMIN_NUMBER, '📍 נמצאה נסיעה לדוגמה מאשקלון לירושלים ביום שני ב־21:00');
+            return;
+        }
+
+        if (body === 'עצור חיפוש') {
+            scanning = false;
+            await client.sendMessage(ADMIN_NUMBER, '🛑 החיפוש הופסק לפי בקשתך.');
+            return;
+        }
+    }
+
     const chat = await msg.getChat();
     const isGroup = chat.isGroup;
     const fromSelf = msg.from === BOT_NUMBER;
